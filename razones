@@ -1,0 +1,21 @@
+#Instalamos primero las paqueterías
+install.packages("ggplot2")
+
+#Pedimos que nos lea nuestra librería que vamos a usar
+library(ggplot2)
+
+
+#haremos un data.frame para que nos guarde los datos, el nombre de "estudio", "situación" y "responses" son modificables.
+
+estudio <- data.frame(Situación = c("Sin síntomas", "Con enfermedad respiratoria aguda", "Con sospecha de COVID propia", "Sin síntomas pero con sospecha de COVID-19 de un familiar o persona cercana", "Con diagnóstico de COVID-19 confirmado", "Sin síntomas pero con diagnóstico de COVID-19 de una persona con la que tuvo contacto en los últimos 14 días", "Con diagnóstico de COVID-19 pero ya recuperada(o)"),
+                      Responses = c(92987, 1227, 2737, 2265, 588, 1593, 2060)) 
+
+#El signo de pesos sirve para extraer de nuestra data.frame llamado "estudio" los datos de nuestra variable "situación" y así con lo demás.
+
+estudio$Situación =factor(estudio$Situación, levels=c("Sin síntomas", "Con enfermedad respiratoria aguda", "Con sospecha de COVID propia", "Sin síntomas pero con sospecha de COVID-19 de un familiar o persona cercana", "Con diagnóstico de COVID-19 confirmado", "Sin síntomas pero con diagnóstico de COVID-19 de una persona con la que tuvo contacto en los últimos 14 días", "Con diagnóstico de COVID-19 pero ya recuperada(o)"))
+levels(estudio$Situación) 
+
+#aquí ya se grafica
+ggplot(estudio, aes(x = Situación, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Situación Actual de la muestra")
