@@ -19,3 +19,5 @@ levels(estudio$Situación)
 ggplot(estudio, aes(x = Situación, y = Responses)) +
   geom_bar(stat = "identity", show.legend = T) + 
   labs(title = "Situación Actual de la muestra")
+
+#Guardamos la imagen de la sig. forma: Width 4000 x Height 412 
