@@ -20,4 +20,239 @@ ggplot(estudio, aes(x = Situación, y = Responses)) +
   geom_bar(stat = "identity", show.legend = T) + 
   labs(title = "Situación Actual de la muestra")
 
-#Guardamos la imagen de la sig. forma: Width 4000 x Height 412 
+#Guardamos la imagen de la sig. forma: Width 4000 x Height 412
+
+#último mes
+
+estudio <- data.frame(Mes = c("No he perdido a ningún ser querido o cercano por fallecimiento", "He perdido a una hija (o) por su sensible fallecimiento debido al COVID-19", "He perdido a mi esposa (o) por su sensible fallecimiento debido al COVID-19", "He perdido a mi madre o padre por su sensible fallecimiento debido al COVID-19", "He perdido a un familiar cercano por su sensible fallecimiento debido al COVID-19", "He perdido a una amiga (o) cercana (o) por su sensible fallecimiento debido al COVID-19", "He perdido a un (a) colega cercana (o) por su sensible fallecimiento debido al COVID-19"),
+                      Responses = c(15231, 6, 10, 37, 375, 124, 152)) 
+
+estudio$Mes =factor(estudio$Mes, levels=c("No he perdido a ningún ser querido o cercano por fallecimiento", "He perdido a una hija (o) por su sensible fallecimiento debido al COVID-19", "He perdido a mi esposa (o) por su sensible fallecimiento debido al COVID-19", "He perdido a mi madre o padre por su sensible fallecimiento debido al COVID-19", "He perdido a un familiar cercano por su sensible fallecimiento debido al COVID-19", "He perdido a una amiga (o) cercana (o) por su sensible fallecimiento debido al COVID-19", "He perdido a un (a) colega cercana (o) por su sensible fallecimiento debido al COVID-19"))
+levels(estudio$Mes) 
+
+ggplot(estudio, aes(x = Mes, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "En el último mes...")
+
+#Usted se encuentra
+
+estudio <- data.frame(Estado = c( "Sola/Solo", "Con familiares", "Con amigos"),
+                      Responses = c(1788, 13897, 250)) 
+
+estudio$Estado =factor(estudio$Estado, levels=c("Sola/Solo", "Con familiares", "Con amigos"))
+levels(estudio$Estado)
+
+ggplot(estudio, aes(x = Estado, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Usted se encuentra")
+
+#donde se encuentra
+estudio <- data.frame(Lugar = c( "En una casa/departamento", "En un albergue", "En la calle", "Sin Codificación"),
+                      Responses = c(15838, 16, 57, 24)) 
+
+estudio$Lugar =factor(estudio$Lugar, levels=c("En una casa/departamento", "En un albergue", "En la calle", "Sin codificación"))
+levels(estudio$Lugar)
+
+ggplot(estudio, aes(x = Lugar, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Dónde se encuentra")
+
+#Porqué llena el cuestionario
+
+estudio <- data.frame(Razón = c("Sin codificar1", "Pandemia COVID-19", "Otra", "Sin codificar"),
+                      Responses = c(21, 206, 15706, 2)) 
+
+estudio$Razón =factor(estudio$Razón, levels=c("Sin codificar1", "Pandemia COVID-19", "Otra", "Sin codificar"))
+levels(estudio$Razón)
+
+ggplot(estudio, aes(x = Razón, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Situación por la que llena el instrumento")
+
+#cuarentena
+
+estudio <- data.frame(Cuarentena = c("Sí, total", "Parcialmente (Debo trabajar o soy quien sale por víveres)", "No"),
+                      Responses = c(7173, 6191, 2571)) 
+
+estudio$Cuarentena =factor(estudio$Cuarentena, levels=c("Sí, total", "Parcialmente (Debo trabajar o soy quien sale por víveres)", "No"))
+levels(estudio$Cuarentena)
+
+ggplot(estudio, aes(x = Cuarentena, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "¿Se encuentra en cuarentena?")
+
+
+#Perfil
+
+estudio <- data.frame( Perfil = c("Personal de Salud", "Comunidad Universitaria (UNAM)", "Población en General"),
+                       Responses = c(21, 4949, 1221)) 
+
+estudio$Perfil =factor(estudio$Perfil, levels=c("Personal de Salud", "Comunidad Universitaria (UNAM)", "Población en General"))
+levels(estudio$Perfil)
+
+ggplot(estudio, aes(x = Perfil, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "¿Cuál es su perfil?")
+
+#PAÍS
+
+estudio <- data.frame(Pais = c("México","Afganistán", "Andorra", "Antigua y Barbuda", "Argentina", "Bélgica", "Bolivia","Chile","Colombia", 
+                               "Cuba", "Ecuador", "España", "EUA", "Guatemala","Israel", "Japón", "Madagascar","Paraguay", "Perú", "Venezuela"),
+                       Responses = c(4874, 1, 1, 1, 7, 1, 3, 3, 15, 1, 1, 2, 23, 4, 1, 1, 1, 1, 7, 1)) 
+
+estudio$Pais =factor(estudio$Pais, levels=c("México","Afganistán", "Andorra", "Antigua y Barbuda", "Argentina", "Bélgica", "Bolivia", "Chile", "Colombia", 
+                                            "Cuba", "Ecuador", "España", "EUA", "Guatemala", "Israel", "Japón", "Madagascar","Paraguay", "Perú", "Venezuela"))
+levels(estudio$Pais)
+
+ggplot(estudio, aes(x = Pais, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "País al que pertenece")
+
+#SEXO
+
+estudio <- data.frame(Sexo = c("Mujer", "Hombre"),
+                      Responses = c(10341, 5594)) 
+
+estudio$Sexo =factor(estudio$Sexo, levels=c("Mujer", "Hombre"))
+levels(estudio$Sexo)
+
+ggplot(estudio, aes(x = Sexo, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Sexo de los participantes")
+
+#EMBARAZO
+estudio <- data.frame(Embarazo = c("Mujer embarazadas", "Mujeres sin embarazo"),
+                      Responses = c(18, 10244)) 
+
+estudio$Embarazo =factor(estudio$Embarazo, levels=c("Mujer embarazadas", "Mujeres sin embarazo"))
+levels(estudio$Embarazo)
+
+ggplot(estudio, aes(x = Embarazo, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Mujeres que se encontraban embarazadas al momento de responder el cuestionario")
+
+#EDAD
+estudio <- data.frame(Edad = c("<18", "18-29", "30-39", "40-49", "50-59", ">60"),
+                      Responses = c(5039, 2637, 1503, 754, 246, 65)) 
+
+estudio$Edad =factor(estudio$Edad, levels=c("<18", "18-29", "30-39", "40-49", "50-59", ">60"))
+levels(estudio$Edad)
+
+ggplot(estudio, aes(x = Edad, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Grupo de edad al que pertenecen")
+
+
+#ESCOLARIDAD
+
+estudio <- data.frame(Escolaridad = c("Sin codificación", "Sin escolaridad", "Preescolar", "Primaria", "Secundaria", "Preparatoria/ Bachillerato o Técnico medio",
+                               "Licenciatura", "Especialidad", "Maestría", "Doctorado"),
+                      Responses = c(39, 17, 1, 105, 872, 3018, 5101, 199, 753, 139)) 
+
+estudio$Escolaridad =factor(estudio$Escolaridad, levels=c("Sin codificación", "Sin escolaridad", "Preescolar", "Primaria", "Secundaria", "Preparatoria/ Bachillerato o Técnico medio",
+                                            "Licenciatura", "Especialidad", "Maestría", "Doctorado"))
+levels(estudio$Escolaridad)
+
+ggplot(estudio, aes(x = Escolaridad, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Escolaridad de los participantes")
+
+#COMUNIDAD UNAM
+
+estudio <- data.frame(Comunidad = c("Sin codificar", "Estudiante", "Académico", "Trabajador", "Egresado", "Honorarios"),
+                      Responses = c(7672, 2124, 93, 32, 311, 12)) 
+
+estudio$Comunidad =factor(estudio$Comunidad, levels=c("Sin codificar", "Estudiante", "Académico", "Trabajador", "Egresado", "Honorarios"))
+levels(estudio$Comunidad)
+
+ggplot(estudio, aes(x = Comunidad, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Comunidad UNAM")
+
+#TRABAJO
+estudio <- data.frame(Ocupación = c("Sin codificar", "No trabaja", "Empleado"),
+                      Responses = c(140, 5072, 5032)) 
+
+estudio$Ocupación =factor(estudio$Ocupación, levels=c("Sin codificar", "No trabaja", "Empleado"))
+levels(estudio$Ocupación)
+
+ggplot(estudio, aes(x = Ocupación, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Ocupación actual")
+
+#mujeres no trabajan 5104, sí 5097
+#Hombres no trabajan 2064, sí 3432
+
+estudio <- data.frame(Ocupación = c("Mujeres que sí trabajan", "Mujeres que no trabajan", "Hombres que sí trabajan", "Hombres que no trabajan"),
+                      Responses = c(5097, 5104, 3432, 2064)) 
+
+estudio$Ocupación =factor(estudio$Ocupación, levels=c("Mujeres que sí trabajan", "Mujeres que no trabajan", "Hombres que sí trabajan", "Hombres que no trabajan"))
+levels(estudio$Ocupación)
+
+ggplot(estudio, aes(x = Ocupación, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Ocupación actual")
+
+#ENTIDAD ACADÉMICA
+
+estudio <- data.frame(Escuela = c("Sin Codificar", "Escuela Nacional Colegio de Ciencias y Humanidades", "Escuela Nacional Preparatoria", "Ciudad Universitaria", 
+                                  "Facultad de Estudios Superiores", "Otra UNAM", "Otra"),
+                      Responses = c(12319, 298, 263, 1895,802, 238, 167)) 
+
+estudio$Escuela =factor(estudio$Escuela, levels=c("Sin Codificar", "Escuela Nacional Colegio de Ciencias y Humanidades", "Escuela Nacional Preparatoria", "Ciudad Universitaria"
+                                                  "Facultad de Estudios Superiores", "Otra UNAM", "Otra"))
+levels(estudio$Escuela)
+
+ggplot(estudio, aes(x = Escuela, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Entidad Académica")
+
+#ESTADO
+#NORTE: Baja California, Chihuahua, Coahuila, Nuevo León, Tamaulipas. 
+#NORTE-OCCIDENTE: Baja California Sur, Sinaloa, Nayarit, Durango y Zacatecas.
+#CENTRO-NORTE: Jalisco, Aguascalientes, Colima, Michoacán, y San Luis Potosí.
+#CENTRO: Guanajuato, Querétaro, Hidalgo, Estado de México, CDMX, Morelos, Tlaxcala, Puebla.
+#SUR: Guerrero, Oaxaca, Chiapas, Veracruz, Tabasco, Campeche, Yucatán y Quitana Roo.
+estudio <- data.frame(Región = c("Sin Codificar", "Norte", "Norte-occidente", "Centro-norte", "Centro", "Sur", "EUA"),
+                      Responses = c(98, 1010, 297, 4417, 11756, 1431, 25)) 
+
+estudio$Región =factor(estudio$Región, levels=c("Sin Codificar", "Norte", "Norte-occidente", "Centro-norte", "Centro", "Sur", "EUA"))
+levels(estudio$Región)
+
+ggplot(estudio, aes(x = Región, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "Región desde donde contestaron el instrumento")
+
+
+#NIÑOS 1 SÍ 0 NO
+estudio <- data.frame(Opción = c("Sí", "No"),
+                      Responses = c(4611, 11323)) 
+
+estudio$Opción =factor(estudio$Opción, levels=c("Sí", "No"))
+levels(estudio$Opción)
+
+ggplot(estudio, aes(x = Opción, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "¿Tiene niños a su cargo?")
+
+#PERSONA MAYOR DE 65 1 SÍ 0 NO
+estudio <- data.frame(Opción = c("Sí", "No"),
+                      Responses = c(2966, 12989)) 
+
+estudio$Opción =factor(estudio$Opción, levels=c("Sí", "No"))
+levels(estudio$Opción)
+
+ggplot(estudio, aes(x = Opción, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "¿Cuida a una persona >65 años?")
+
+#CUIDA PERSONA CON ENF. CRÓNICA 1SÍ 0NO
+estudio <- data.frame(Opción = c("Sí", "No"),
+                      Responses = c(3084, 12851)) 
+
+estudio$Opción =factor(estudio$Opción, levels=c("Sí", "No"))
+levels(estudio$Opción)
+
+ggplot(estudio, aes(x = Opción, y = Responses)) +
+  geom_bar(stat = "identity", show.legend = T) + 
+  labs(title = "¿Cuida a una persona con una enfermedad crónica?")
